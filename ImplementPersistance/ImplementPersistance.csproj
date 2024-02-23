@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Domain\Domain.csproj" />
-    <ProjectReference Include="..\Persistance\Persistance.csproj" />
+    <ProjectReference Include="..\Projector.Domain\Projector.Domain.csproj" />
+    <ProjectReference Include="..\Projector.Persistance\Projector.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
