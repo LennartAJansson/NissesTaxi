@@ -1,10 +1,10 @@
 ﻿namespace Api.Domain.Abstract;
 
-using Model;
+using Common.Contracts;
 
 public interface ICommandService
 {
-  Task<Person> AddPerson(Person person);
-  Task<Person> UpdatePerson(Person person);
-  Task<Person> DeletePerson(Guid id);
+  Task AddPerson(AddPersonCommand person);
+  Task DeletePerson(DeletePersonCommand person);
+  Task UpdatePerson(UpdatePersonCommand person);
 }

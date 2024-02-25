@@ -2,5 +2,5 @@
 
 public class Person : EntityBase
 {
-  public required string Namn { get; set; }
+  public string? Name { get; set; }
 }

@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 using Api.Domain.Abstract;
 
+using Common.Contracts;
+
 using MediatR;
 
 using Microsoft.Extensions.Logging;
-
-using Model;
 
 using static Api.Domain.Mediators.DeletePersonMessageMediator;
 
@@ -19,17 +19,20 @@ public class DeletePersonMessageMediator(ILogger<DeletePersonMessageMediator> lo
   public async Task<DeletePersonResponse> Handle(DeletePersonRequest request, CancellationToken cancellationToken)
   {
     logger.LogTrace("Inside Mediator");
-    Person person = await service.DeletePerson(request.Id);
-    return DeletePersonResponse.Create(person.Id, person.Namn);
+
+    DeletePersonCommand command = DeletePersonCommand.Create(request.Id);
+    await service.DeletePerson(command);
+
+    return DeletePersonResponse.Create(command.Id);
   }
 
   public record DeletePersonRequest(Guid Id) : IRequest<DeletePersonResponse>
   {
     public static DeletePersonRequest Create(Guid id) => new(id);
   };
-  public record DeletePersonResponse(Guid Id, string Name)
+  public record DeletePersonResponse(Guid Id)
   {
-    public static DeletePersonResponse Create(Guid id, string name) => new(id, name);
+    public static DeletePersonResponse Create(Guid id) => new(id);
   }
 }
 

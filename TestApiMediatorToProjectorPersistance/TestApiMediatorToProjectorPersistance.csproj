@@ -5,7 +5,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UserSecretsId>fdb910f9-976b-46a4-8bda-63e4edf8a690</UserSecretsId>
+    <UserSecretsId>68489435-08b3-431b-ac43-79c3be5404b6</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,8 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Api.Domain\Api.Domain.csproj" />
+    <ProjectReference Include="..\Api.Persistance\Api.Persistance.csproj" />
+    <ProjectReference Include="..\Common.Messaging\Common.Messaging.csproj" />
     <ProjectReference Include="..\Projector.Domain\Projector.Domain.csproj" />
     <ProjectReference Include="..\Projector.Persistance\Projector.Persistance.csproj" />
   </ItemGroup>
+
+
 
 </Project>

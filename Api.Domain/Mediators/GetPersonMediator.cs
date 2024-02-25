@@ -20,7 +20,7 @@ public class GetPersonMediator(ILogger<GetPersonMediator> logger, IQueryService 
   {
     logger.LogTrace("Inside Mediator");
     Person person = await service.GetPerson(request.Id);
-    return GetPersonResponse.Create(person.Id, person.Namn);
+    return GetPersonResponse.Create(person.Id, person.Name);
   }
 
   public record GetPersonRequest(Guid Id) : IRequest<GetPersonResponse>

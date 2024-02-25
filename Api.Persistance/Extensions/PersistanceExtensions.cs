@@ -9,7 +9,8 @@ public static class PersistanceExtensions
 {
   public static IServiceCollection AddApiPersistance(this IServiceCollection services, Func<string>? connectionStringFunc = null)
   {
-    _ = services.AddTransient<IQueryService, QueryService>();
+    var connectionString = connectionStringFunc.Invoke();
+    _ = services.AddTransient<IQueryService>(sp=>new QueryService(connectionString));
     _ = services.AddTransient<ICommandService, CommandService>();
 
     return services;

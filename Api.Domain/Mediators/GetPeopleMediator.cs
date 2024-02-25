@@ -21,9 +21,13 @@ public class GetPeopleMediator(ILogger<GetPeopleMediator> logger, IQueryService 
   {
     logger.LogTrace("Inside Mediator");
     IEnumerable<Person> people = await service.GetPeople();
-    return people.Select(person => GetPersonResponse.Create(person.Id, person.Namn));
+
+    return people.Select(person => GetPersonResponse.Create(person.Id, person.Name));
   }
-  public record GetPeopleRequest() : IRequest<IEnumerable<GetPersonResponse>>;
+  public record GetPeopleRequest() : IRequest<IEnumerable<GetPersonResponse>>
+  {
+    public static GetPeopleRequest Create() => new();
+  };
   //public record GetPersonResponse();
 }
 

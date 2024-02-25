@@ -20,7 +20,8 @@ public class DeletePersonMediator(ILogger<DeletePersonMediator> logger, IPersist
   {
     logger.LogTrace("Inside Mediator");
     Person person = await service.DeletePerson(request.Id);
-    return DeletePersonResponse.Create(person.Id, person.Namn);
+
+    return DeletePersonResponse.Create(person.Id, person.Name);
   }
 
   public record DeletePersonRequest(Guid Id) : IRequest<DeletePersonResponse>

@@ -1,16 +1,16 @@
 ﻿namespace Api.Persistance.Services;
-using System;
 using System.Threading.Tasks;
 
 using Api.Domain.Abstract;
 
-using Model;
+using Common.Contracts;
 
-public class CommandService : ICommandService
+public class CommandService(ICommandQueue commandQueue) : ICommandService
 {
-  public Task<Person> AddPerson(Person person) => throw new NotImplementedException();
-
-  public Task<Person> UpdatePerson(Person person) => throw new NotImplementedException();
-
-  public Task<Person> DeletePerson(Guid id) => throw new NotImplementedException();
+  public async Task AddPerson(AddPersonCommand person)
+    => await commandQueue.SendAsync(person);
+  public async Task DeletePerson(DeletePersonCommand person)
+    => await commandQueue.SendAsync(person);
+  public async Task UpdatePerson(UpdatePersonCommand person)
+    => await commandQueue.SendAsync(person);
 }

@@ -3,13 +3,13 @@
 using System.Threading;
 using System.Threading.Tasks;
 
+using Common.Contracts;
+
 using Domain.Abstract;
 
 using MediatR;
 
 using Microsoft.Extensions.Logging;
-
-using Model;
 
 using static Api.Domain.Mediators.AddPersonMessageMediator;
 
@@ -19,9 +19,11 @@ public class AddPersonMessageMediator(ILogger<AddPersonMessageMediator> logger, 
   public async Task<AddPersonResponse> Handle(AddPersonRequest request, CancellationToken cancellationToken)
   {
     logger.LogTrace("Inside Mediator");
-    Person person = new() { Id = Guid.NewGuid(), Namn = request.Name };
-    person = await service.AddPerson(person);
-    return AddPersonResponse.Create(person.Id, person.Namn);
+
+    AddPersonCommand command = AddPersonCommand.Create(Guid.NewGuid(), request.Name);
+    await service.AddPerson(command);
+
+    return AddPersonResponse.Create(command.Id, command.Name);
   }
 
   public record AddPersonRequest(string Name) : IRequest<AddPersonResponse>

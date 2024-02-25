@@ -19,9 +19,10 @@ public class UpdatePersonMediator(ILogger<UpdatePersonMediator> logger, IPersist
   public async Task<UpdatePersonResponse> Handle(UpdatePersonRequest request, CancellationToken cancellationToken)
   {
     logger.LogTrace("Inside Mediator");
-    Person person = new() { Id = request.Id, Namn = request.Name };
+    Person person = new() { Id = request.Id, Name = request.Name };
     person = await service.UpdatePerson(person);
-    return UpdatePersonResponse.Create(person.Id, person.Namn);
+
+    return UpdatePersonResponse.Create(person.Id, person.Name);
   }
 
   public record UpdatePersonRequest(Guid Id, string Name) : IRequest<UpdatePersonResponse>

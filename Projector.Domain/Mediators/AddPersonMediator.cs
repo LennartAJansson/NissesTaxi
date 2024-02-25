@@ -16,12 +16,14 @@ using static Projector.Domain.Mediators.AddPersonMediator;
 public class AddPersonMediator(ILogger<AddPersonMediator> logger, IPersistanceService service)
   : IRequestHandler<AddPersonRequest, AddPersonResponse>
 {
+
   public async Task<AddPersonResponse> Handle(AddPersonRequest request, CancellationToken cancellationToken)
   {
     logger.LogTrace("Inside Mediator");
-    Person person = new() { Id = Guid.NewGuid(), Namn = request.Name };
+    Person person = new() { Id = Guid.NewGuid(), Name = request.Name };
     person = await service.AddPerson(person);
-    return AddPersonResponse.Create(person.Id, person.Namn);
+
+    return AddPersonResponse.Create(person.Id, person.Name);
   }
 
   public record AddPersonRequest(string Name) : IRequest<AddPersonResponse>

@@ -12,8 +12,8 @@ UserSecret (glöm inte att ha samma i applikationen sen):
     "DefaultConnection": "Server=localhost;User=root;Password=password;Database=NissesTaxi"
 }
 
-Add-Migration -Name your-migration-name -Context PeopleDbContext -Project Persistance -StartupProject Persistance
-Update-Database -Context PeopleDbContext -Project Persistance -StartupProject Persistance
+Add-Migration -Name your-migration-name -Context PeopleDbContext -Project Projector.Persistance -StartupProject Projector.Persistance
+Update-Database -Context PeopleDbContext -Project Projector.Persistance -StartupProject Projector.Persistance
 */
 public class PeopleDbContextFactory : IDesignTimeDbContextFactory<PeopleDbContext>
 {
