@@ -24,7 +24,7 @@ public static class PersistanceExtensions
     {
       ServerVersion version = ServerVersion.AutoDetect(connectionString);
       _ = optionsAction.UseMySql(connectionString, version);
-    });
+    }, ServiceLifetime.Transient, ServiceLifetime.Transient);
 
     _ = services.AddTransient<IPersistanceService, PersistanceService>();
     return services;

@@ -10,7 +10,7 @@ public static class DomainExtensions
   {
     _ = services.AddMediatR(configuration =>
     {
-      _ = configuration.RegisterServicesFromAssemblyContaining<AddPersonMediator>();
+      _ = configuration.RegisterServicesFromAssemblyContaining<AddPersonCommandMediator>();
     });
     return services;
   }

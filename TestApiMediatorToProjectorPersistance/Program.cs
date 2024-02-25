@@ -12,9 +12,10 @@ using Microsoft.Extensions.Hosting;
 using Projector.Domain.Extensions;
 using Projector.Persistance.Extensions;
 
+using static Api.Domain.Mediators.AddPersonMessageMediator;
 using static Api.Domain.Mediators.GetPeopleMediator;
 using static Api.Domain.Mediators.GetPersonMediator;
-using static Projector.Domain.Mediators.AddPersonMediator;
+using static Projector.Domain.Mediators.AddPersonCommandMediator;
 
 IHost host = Host.CreateDefaultBuilder(args)
   .ConfigureAppConfiguration((hostContext, config) =>
