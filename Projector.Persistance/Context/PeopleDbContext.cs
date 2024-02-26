@@ -19,4 +19,12 @@ public class PeopleDbContext : DbContext, IPeopleDbContext
     _ = modelBuilder.ApplyConfigurationsFromAssembly(typeof(PeopleDbContext).Assembly);
     base.OnModelCreating(modelBuilder);
   }
+
+  public void Migrate()
+  {
+    if (Database.GetPendingMigrations().Any())
+    {
+      Database.Migrate();
+    }
+  }
 }

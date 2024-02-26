@@ -2,6 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 using Persistance.Context;
 using Persistance.Services;
@@ -28,5 +29,13 @@ public static class PersistanceExtensions
 
     _ = services.AddTransient<IPersistanceService, PersistanceService>();
     return services;
+  }
+
+  public static IHost UpdateDatabase(this IHost host)
+  {
+    using IServiceScope scope = host.Services.CreateScope();
+    IPeopleDbContext context = scope.ServiceProvider.GetRequiredService<IPeopleDbContext>();
+    context.Migrate();
+    return host;
   }
 }

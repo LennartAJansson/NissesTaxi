@@ -4,6 +4,6 @@ using System.Threading.Channels;
 
 public interface ICommandQueue
 {
-  Channel<ICommand> Command { get; }
+  Channel<ICommand> CommandChannel { get; }
   Task SendAsync(ICommand command);
 }

@@ -7,4 +7,5 @@ using Model;
 public interface IPeopleDbContext : IDbContext
 {
   DbSet<Person> People { get; }
+  void Migrate();
 }

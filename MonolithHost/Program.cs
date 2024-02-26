@@ -2,13 +2,13 @@ using Api.Domain.Extensions;
 using Api.Endpoints.Extensions;
 using Api.Persistance.Extensions;
 
+using Common.Messaging.Extensions;
+
 using Projector.Domain.Extensions;
 using Projector.Endpoints.Extensions;
 using Projector.Persistance.Extensions;
 
-using Common.Messaging.Extensions;
-
-var builder = WebApplication.CreateBuilder(args);
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddApiEndpoints();
 builder.Services.AddApiDomain();
@@ -22,18 +22,18 @@ builder.Services.AddProjectorPersistance(() => builder.Configuration.GetConnecti
 
 builder.Services.AddMessaging();
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+WebApplication app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-  app.UseSwagger();
-  app.UseSwaggerUI();
+  _ = app.UseSwagger();
+  _ = app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
@@ -44,6 +44,6 @@ app.UseAuthorization();
 app.UseApiControllers();
 
 //Map Hosts Controllers
-app.MapControllers();
+//app.MapControllers();
 
 app.Run();

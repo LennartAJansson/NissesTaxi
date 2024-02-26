@@ -16,8 +16,8 @@
     <ProjectReference Include="..\Api.Domain\Api.Domain.csproj" />
     <ProjectReference Include="..\Api.Persistance\Api.Persistance.csproj" />
     <ProjectReference Include="..\Common.Messaging\Common.Messaging.csproj" />
-    <ProjectReference Include="..\Projector.Domain\Projector.Domain.csproj" />
     <ProjectReference Include="..\Projector.Endpoints\Projector.Endpoints.csproj" />
+    <ProjectReference Include="..\Projector.Domain\Projector.Domain.csproj" />
     <ProjectReference Include="..\Projector.Persistance\Projector.Persistance.csproj" />
   </ItemGroup>
 

@@ -19,5 +19,8 @@ public class AddPersonEndpoint(ILogger<AddPersonEndpoint> logger, ISender sender
 {
   [HttpPost("api/People/AddPerson")]
   public override async Task<ActionResult<AddPersonResponse>> HandleAsync(AddPersonRequest request, CancellationToken cancellationToken = default)
-  => await sender.Send(request);
+  {
+    AddPersonResponse? result = await sender.Send(request);
+    return result is null ? BadRequest(result) : Ok(result);
+  }
 }
