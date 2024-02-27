@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		extensions.vsext = extensions.vsext
+		Readme - Old.md = Readme - Old.md
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
@@ -46,7 +47,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServiceApi", "MicroSer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServiceProjector", "MicroServiceProjector\MicroServiceProjector.csproj", "{CC0C4DAB-4F88-4B36-BF2C-5DCD9DEBD146}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApiMediatorToProjectorPersistance", "TestApiMediatorToProjectorPersistance\TestApiMediatorToProjectorPersistance.csproj", "{28FE799C-643C-4F79-B720-D26E3AFBCFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApiMediatorToProjectorPersistance", "TestApiMediatorToProjectorPersistance\TestApiMediatorToProjectorPersistance.csproj", "{28FE799C-643C-4F79-B720-D26E3AFBCFCF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -8,7 +8,7 @@ public static class EndpointExtensions
 {
   public static IServiceCollection AddProjectorEndpoints(this IServiceCollection services)
   {
-    services.AddHostedService<MessageWorker>();
+    _ = services.AddHostedService<MessageWorker>();
 
     return services;
   }
