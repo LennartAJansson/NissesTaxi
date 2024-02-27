@@ -11,8 +11,10 @@ public class DomainCommandQueue : ICommandQueue
 
   public DomainCommandQueue()
   {
-    _ = new UnboundedChannelOptions();
+    //_ = new BoundedChannelOptions(100);
+    //_ = new UnboundedChannelOptions();
     //Options for the channel is used to define the behavior of the channel
+    //CommandChannel = Channel.CreateBounded<ICommand>();
     CommandChannel = Channel.CreateUnbounded<ICommand>();
   }
 
