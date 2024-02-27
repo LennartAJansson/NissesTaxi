@@ -49,6 +49,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServiceProjector", "Mi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApiMediatorToProjectorPersistance", "TestApiMediatorToProjectorPersistance\TestApiMediatorToProjectorPersistance.csproj", "{28FE799C-643C-4F79-B720-D26E3AFBCFCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EndPointComparison", "EndPointComparison\EndPointComparison.csproj", "{0A60D234-5A82-4DB0-ABEF-56D15518D407}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +117,10 @@ Global
 		{28FE799C-643C-4F79-B720-D26E3AFBCFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28FE799C-643C-4F79-B720-D26E3AFBCFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28FE799C-643C-4F79-B720-D26E3AFBCFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A60D234-5A82-4DB0-ABEF-56D15518D407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A60D234-5A82-4DB0-ABEF-56D15518D407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A60D234-5A82-4DB0-ABEF-56D15518D407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A60D234-5A82-4DB0-ABEF-56D15518D407}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -135,6 +141,7 @@ Global
 		{60146A46-E8E4-4679-AD5E-CA3EC4673A99} = {2118E7D1-70D2-478A-9A62-42B5CA1BF8B9}
 		{CC0C4DAB-4F88-4B36-BF2C-5DCD9DEBD146} = {2118E7D1-70D2-478A-9A62-42B5CA1BF8B9}
 		{28FE799C-643C-4F79-B720-D26E3AFBCFCF} = {2118E7D1-70D2-478A-9A62-42B5CA1BF8B9}
+		{0A60D234-5A82-4DB0-ABEF-56D15518D407} = {2118E7D1-70D2-478A-9A62-42B5CA1BF8B9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E516D871-AD23-4603-847B-243B2C4D298E}
