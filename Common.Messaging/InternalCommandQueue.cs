@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 using Common.Contracts;
 
-public class DomainCommandQueue : ICommandQueue
+public class InternalCommandQueue : ICommandQueue
 {
   public Channel<ICommand> CommandChannel { get; set; }
 
-  public DomainCommandQueue()
+  public InternalCommandQueue()
   {
     //_ = new BoundedChannelOptions(100);
     //_ = new UnboundedChannelOptions();

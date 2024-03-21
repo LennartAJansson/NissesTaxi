@@ -1,6 +1,11 @@
 ﻿namespace Common.Contracts;
 
-
+public class CommandEvent
+{
+  public Guid Id { get; set; }
+  public DateTimeOffset Date { get; set; }
+  public required ICommand Command { get; set; }
+}
 
 public record AddPersonCommand(Guid Id, string Name) : ICommand
 {

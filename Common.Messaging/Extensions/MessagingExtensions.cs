@@ -8,7 +8,7 @@ public static class MessagingExtensions
 {
   public static IServiceCollection AddMessaging(this IServiceCollection services)
   {
-    services.AddSingleton<ICommandQueue, DomainCommandQueue>();
+    services.AddSingleton<ICommandQueue, InternalCommandQueue>();
     return services;
   }
 }

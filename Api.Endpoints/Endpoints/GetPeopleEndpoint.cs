@@ -1,4 +1,4 @@
-﻿namespace Api.Endpoints;
+﻿namespace Api.Endpoints.Endpoints;
 
 using System.Threading;
 using System.Threading.Tasks;
